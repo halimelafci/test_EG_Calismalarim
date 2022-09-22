@@ -28,7 +28,7 @@ public class C03_DropDown {
 
     @AfterMethod
     public void tearDown(){
-        //driver.close();
+        driver.close();
     }
 
 
