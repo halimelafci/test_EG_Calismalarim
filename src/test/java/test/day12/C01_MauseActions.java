@@ -18,7 +18,7 @@ public class C01_MauseActions extends TestBase {
         //Yeni bir class olusturalim: MouseActions3
         // 1- https://www.amazon.com/ adresine gidelim
         // 2- Sag ust bolumde bulunan “hello sigin” mouse’u bu menunun ustune bekeletelim
-        // 3- “your list” butonuna basalim
+        // 3- “your lists” butonuna basalim
         // 4- ve your  list sayfasinin acildigini test edin
 
         driver.get("https://amazon.com");
@@ -27,8 +27,8 @@ public class C01_MauseActions extends TestBase {
         WebElement helloElement= driver.findElement(By.cssSelector("#nav-link-accountList"));
         action.moveToElement(helloElement).perform();
 
-       String actual= driver.findElement(By.xpath("//div[@id=\"nav-al-title\"]")).getText();
-       String expected="Your List";
+       String actual= driver.findElement(By.xpath("//div[text()='Your Lists']")).getText();
+       String expected="Your Lists";
         Assert.assertEquals(actual,expected);
 
 

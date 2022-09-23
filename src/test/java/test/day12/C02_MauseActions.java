@@ -1,7 +1,15 @@
 package test.day12;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestBase;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class C02_MauseActions extends TestBase {
 
@@ -17,6 +25,29 @@ public class C02_MauseActions extends TestBase {
 
     @Test
     public void test1(){
+
+        driver.get("https://the-internet.herokuapp.com/context_menu");
+
+        Actions action=new Actions(driver);
+        WebElement cizgiliAlan= driver.findElement(By.xpath("//div[@id=\"hot-spot\"]"));
+        action.contextClick(cizgiliAlan).perform();
+        driver.switchTo().alert().accept();
+
+
+
+
+        driver.findElement(By.xpath("//a[text()='Elemental Selenium']")).click();
+
+        ArrayList<String> windowHandles=new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(windowHandles.get(1));
+
+        WebElement elementYazisiWE=driver.findElement(By.xpath("//h1[text()='Elemental Selenium']"));
+        String elementYzisi=elementYazisiWE.getText();
+        String expected="Elemental Selenium";
+        Assert.assertTrue(elementYzisi.contains(expected));
+
+
+
 
 
     }
