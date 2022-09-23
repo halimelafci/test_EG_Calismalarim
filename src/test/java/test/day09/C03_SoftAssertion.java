@@ -31,12 +31,13 @@ public class C03_SoftAssertion {
 
         SoftAssert softassert= new  SoftAssert();
 
-        softassert.assertEquals(a,b,"1. test basarisiz");
+
         softassert.assertTrue(b>a,"2. test basarisiz");
-        softassert.assertTrue(c<b,"3. test basarisiz");
+        softassert.assertTrue(c>b,"3. test basarisiz");
         softassert.assertTrue(c>a,"4. test basarisiz");
 
         softassert.assertAll();
+
         System.out.println("bu satir calismaz");
 
 
