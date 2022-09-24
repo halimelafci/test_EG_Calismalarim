@@ -3,7 +3,7 @@ package test.day12;
 import org.testng.annotations.Test;
 import utils.TestBase;
 
-public class C05_FileExist extends TestBase {
+public class C06_FileExist extends TestBase {
 
     @Test
     public void test1(){

@@ -63,6 +63,9 @@ public class C02_WindowHandle {
         driver.switchTo().window(windowHandles.get(1));
         driver.getTitle().equals("New Window");
 
+        //sayfadaki bizim yada limkin kendisi acilan sayfalari bir sitringlerden olusan bir
+        // ArrayListe atariz ve liste icinde swichto ile index belirterek istedigimiz sayfaya geceriz.
+
 
 
         //●  Sayfadaki textin “New Window” olduğunu doğrulayın.

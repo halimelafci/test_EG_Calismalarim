@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestBase;
 
-public class C03_KeyboardActions extends TestBase {
+public class C04_KeyboardActions1 extends TestBase {
 
       //1- Bir Class olusturalim KeyboardActions1
     // 2- https://www.amazon.com sayfasina gidelim

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import utils.TestBase;
 
-public class C04_KeyboardActions extends TestBase {
+public class C05_KeyboardActions extends TestBase {
 
     //1- Bir Class olusturalim KeyboardActions2
     // 2- https://html.com/tags/iframe/ sayfasina gidelim
