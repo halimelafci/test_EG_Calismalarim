@@ -2,9 +2,14 @@ package test.day14;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestBase;
+
+import java.time.Duration;
 
 public class C01_ExplicitWait extends TestBase {
 
@@ -45,6 +50,9 @@ public class C01_ExplicitWait extends TestBase {
             driver.findElement(By.xpath("(//button[@type=\"button\"])[1]")).click();
 
             // 5. “It’s gone!” mesajinin goruntulendigini dogrulayin.
+
+            WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's gone!\"]")));
             WebElement itsGoneButonu2 = driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
             Assert.assertTrue(itsGoneButonu2.isDisplayed());
 
@@ -53,6 +61,9 @@ public class C01_ExplicitWait extends TestBase {
 
 
             // 7. It’s back mesajinin gorundugunu test edin
+            WebDriverWait wait2=new WebDriverWait(driver, Duration.ofSeconds(15));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's back!\"]")));
+
             WebElement itsBackButonu2 = driver.findElement(By.xpath("//p[text()=\"It's back!\"]"));
             Assert.assertTrue(itsBackButonu2.isDisplayed());
 
