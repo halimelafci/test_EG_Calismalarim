@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.TestBase;
 
@@ -38,14 +39,22 @@ public class C02_Faker extends TestBase {
                 .sendKeys(Keys.TAB) .sendKeys(faker.internet().password())
 
         // 8. Tarih icin gun secin
-                .sendKeys(Keys.TAB) .sendKeys("22")
+                .sendKeys(Keys.TAB) .sendKeys(Keys.TAB) .sendKeys("22")
         // 9. Tarih icin ay secin
                 .sendKeys(Keys.TAB).sendKeys("Mar")
         // 10. Tarih icin yil secin
                 .sendKeys(Keys.TAB).sendKeys("2019")
         // 11. Cinsiyeti secin
-                .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
+
+         .sendKeys(Keys.TAB).click(driver.findElement(By.xpath("//label[text()='Kadın']"))).perform();
+
         // 12. Isaretlediginiz cinsiyetin secili, diger cinsiyet kutusunun secili olmadigini test edin.
+        WebElement kadin=driver.findElement(By.xpath("//input[@value='1']"));
+        WebElement erkek=driver.findElement(By.xpath("//input[@value='2']"));
+        Assert.assertTrue(kadin.isSelected());
+        Assert.assertFalse(erkek.isSelected());
+
         // 13. Sayfayi kapatin
+        driver.close();
     }
 }
