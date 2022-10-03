@@ -18,13 +18,13 @@ public class TestBase {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
        @AfterClass
       public  void tearDowm(){
-       //driver.close();
+        //driver.close();
     }
 
 
@@ -32,6 +32,6 @@ public class TestBase {
 
         TakesScreenshot tss=(TakesScreenshot) driver;
         File tumSayfa=new File("target/screenshot/tumsayfa.jpg");
-        //File geciciResim=tss.getScreenshotAs()
+       // File geciciResim=tss.getScreenshotAs()
     }
 }
